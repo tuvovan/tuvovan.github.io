@@ -54,6 +54,12 @@ collections:
     output: true
     permalink: /projects/:name
 
+### Albums ###
+collections:
+  albums:
+    output: true
+    permalink: /albums/:name
+
 
 ### Disqus ###
 disqus: your-short-name-disqus                          # Your website Shortname on disqus
