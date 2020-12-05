@@ -55,7 +55,7 @@ collections:
     permalink: /projects/:name
 
 ### Albums ###
-permalink: /albums/:name
+permalink: /albums/:title
 
 
 ### Disqus ###
@@ -83,7 +83,11 @@ defaults:
       type: "posts"
     values:
       comments: false                                   # Set to true to enable disqus comments
-
+  - scope:
+      path: ""
+      type: "albums"
+    values:
+      layout: "page"
 ### Exclude from processing ###
 exclude:
   - README.md
