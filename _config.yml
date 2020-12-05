@@ -55,10 +55,7 @@ collections:
     permalink: /projects/:name
 
 ### Albums ###
-collections:
-  albums:
-    output: true
-    permalink: /albums/:name
+permalink: /albums/:name
 
 
 ### Disqus ###
