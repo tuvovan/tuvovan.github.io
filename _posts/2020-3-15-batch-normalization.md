@@ -25,7 +25,7 @@ So to prevent this, we can think of a method of normalizing the distribution of 
 ### Algorithm:
 
 The outline of the algorithm is described as shown in the image below:
-![image info](assets/img/bn_algorithm.png)
+![image info](https://tuvovan.github.io/assets/img/bn_algorithm.png)
 
 The Batch Normalization is applied before entering the specific hidden layers, it modifies the input and use the new values as the activation function.
 When training with the training data, the mean and standard deviation are obtained from the current batch. However, for inference using the test data, instead of using 
