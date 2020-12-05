@@ -54,9 +54,6 @@ collections:
     output: true
     permalink: /projects/:name
 
-### Albums ###
-permalink: /albums/:title
-
 
 ### Disqus ###
 disqus: your-short-name-disqus                          # Your website Shortname on disqus
@@ -83,11 +80,6 @@ defaults:
       type: "posts"
     values:
       comments: false                                   # Set to true to enable disqus comments
-  - scope:
-      path: ""
-      type: "albums"
-    values:
-      layout: "page"
 ### Exclude from processing ###
 exclude:
   - README.md

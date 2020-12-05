@@ -1,0 +1,13 @@
+---
+title: My Favorite Picture(s)
+tags: [Photo]
+style: fill
+color: secondary
+description: Some pictures of my family and me.
+---
+
+## Me and my family @ Tet Holiday 2020
+![](https://amorehead.github.io/assets/img/6.JPG)
+
+## Me and my wife on a Sheep Hill, somewhere near Nha Trang, Vietnam
+![](https://amorehead.github.io/assets/img/1.JPG)
