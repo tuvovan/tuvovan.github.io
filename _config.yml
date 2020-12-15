@@ -2,7 +2,8 @@
 title               : Vo Van Tu
 
 description         : >-
-                      Deep Learning Engineer <a target='_blank' rel='noopener noreferrer' href='https://inhandplus.com/'>@InhandPlus</a>.
+                      Deep Learning Engineer <a target='_blank' rel='noopener noreferrer' href='https://inhandplus.com/'>@InhandPlus</a>.\n
+                      "Để Sống Có Ý Nghĩa Hơn ;)"
 baseurl             : ""                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository          : tuvovan/tuvovan.github.io     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme        : YoussefRaafatNasry/portfolYOU@v2.2.2
