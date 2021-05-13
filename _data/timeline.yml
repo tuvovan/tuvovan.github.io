@@ -2,6 +2,8 @@
   from: 2019
   to: present
   description: • Doing deep learning, gathering data, making models for medication behavior analysis.
+               • Making machine leanring pipeline using kubeflow and run them on Azure.
+
 
 - title: Research Assistant
   from: 2016
