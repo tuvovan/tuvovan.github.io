@@ -16,9 +16,9 @@ Here I will walk through what I have done so far and the obstacles that I’m fa
 
 To use Vertex AI, make sure we got those following things:
 
-a Google Cloud subscription
+    - a Google Cloud subscription
 
-a trained model you want to deploy
+    - a trained model you want to deploy
 
 that is!
 
@@ -33,7 +33,7 @@ Basically, we need to set up a storage account to store all codes, data, models 
 
 If you follow the tutorial til the end, you will end up with this kind of url:
 
-<a href=https://storage.googleapis.com/flh/webapp/index.html>
+[https://storage.googleapis.com/flh/webapp/index.html](https://storage.googleapis.com/flh/webapp/index.html)
 
 This will lead you to a very simple web page and you can try predicting six different types of flowers. 🌺 
 
@@ -51,13 +51,13 @@ Explore a bit, we see that the project structure is as follow:
 
 It has four items:
 
-    * trainer/: A directory of TensorFlow Keras code for training the flower classification model.
+    - trainer/: A directory of TensorFlow Keras code for training the flower classification model.
 
-    * setup.py: A configuration file for packaging the trainer/ directory into a Python source distribution that Vertex AI can use.
+    - setup.py: A configuration file for packaging the trainer/ directory into a Python source distribution that Vertex AI can use.
 
-    * function/: A directory of Python code for a Cloud Function that can receive and preprocess prediction requests from a web browser, send them to Vertex AI, process the prediction responses, and send them back to the browser.
+    - function/: A directory of Python code for a Cloud Function that can receive and preprocess prediction requests from a web browser, send them to Vertex AI, process the prediction responses, and send them back to the browser.
 
-    * webapp/: A directory with code and markup for a web app that gets flower classification predictions from Vertex AI. 
+    - webapp/: A directory with code and markup for a web app that gets flower classification predictions from Vertex AI. 
 
 So as you can guess, we will change the code inside function folder, to fit our needs such as image_size, model name, etc.. For me, I change IMG_WIDTH = 224 in line 12 only and there we go.
 
