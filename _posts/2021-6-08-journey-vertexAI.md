@@ -38,7 +38,7 @@ If you follow the tutorial til the end, you will end up with this kind of url:
 This will lead you to a very simple web page and you can try predicting six different types of flowers. 🌺 
 
 From there, we are going to change the source code a little bit, to deploy our own model.
-![alt text](assets/img/webapp-screenshot_2x.png)
+![](https://tuvovan.github.io/assets/img/webapp-screenshot_2x.png)
 
 ## Try with our Model
 If you follow the example above, you may notice that all codes are from this link: 
