@@ -61,7 +61,7 @@ It has four items:
 
 So as you can guess, we will change the code inside function folder, to fit our needs such as image_size, model name, etc.. For me, I change ```IMG_WIDTH = 224``` in line 12 only and there we go.
 
-One more thing that needs to do to use our model instead of their model is to change the model. Their model has been trained on GCP, but our model is not. So in step 3 [Serving predictions from a custom image classification model](https://cloud.google.com/vertex-ai/docs/tutorials/image-recognition-custom/serving), we will not use the model that has been trained, we will import our model by clicking import button and follow the instruction. 
+One more thing that needs to do to use our model instead of their model is to change the model. Their model has been trained on GCP, but our model is not. So in [step 3](https://cloud.google.com/vertex-ai/docs/tutorials/image-recognition-custom/serving), we will not use the model that has been trained, we will import our model by clicking import button and follow the instruction. 
 
 Finally, follow the remaining steps to create end-point and we will also end up with a link like the previous one. 
 
