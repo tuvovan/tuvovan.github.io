@@ -1,8 +1,9 @@
 - title: Deep Learning Engineer - Korea
   from: 2019
   to: present
-  description: • Doing deep learning, gathering data, making models for medication behavior analysis.
-               • Making machine leanring pipeline using kubeflow and run them on Azure.
+  description: • Doing deep learning, gathering data, making models for the medication behavior analysis.<br>
+               • Making machine learning pipeline using kubeflow and run them on Azure. <br>
+               • Developing the AutoLabeler which automatically generate bounding boxes for object detection tasks.
 
 
 - title: Research Assistant

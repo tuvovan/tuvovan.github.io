@@ -12,7 +12,9 @@ I am a deep learning engineer at InhandPlus Inc. where I am developing the AI al
 
 I got a Master Degree in the major of Computer Engineering in South Korea in 2019. Prior, I was a student in Advanced Program major of Electrical Engineering from Hanoi University of Science and Technology (Top-1 University of Vietnam) in 2008 and I enrolled in a high school for gifted students, specializing in Physics and got the Third Prize in National Physic Contest.<br>
 
-I'm interested in solving low-level computer vision tasks such as Low-light image enhancement, High dynamic range imaging. Checkout my <a href="http://www.github.com/tuvovan">github</a>.
+I'm interested in solving low-level computer vision tasks such as Low-light image enhancement, High dynamic range imaging. 
+
+Checkout my <a href="http://www.github.com/tuvovan">github</a>.
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
