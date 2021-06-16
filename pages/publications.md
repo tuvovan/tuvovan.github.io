@@ -9,7 +9,7 @@ weight: 2
 
 # **Publications**
 - **Tu Van Vo**<br/> 
-**<span style="color: #444444">(Attention! Stay Focus!)[https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf],</span>**<br/><em>to be appear in IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)</em> , Nashville, Jun. 2021.
+**<span style="color: #444444">[https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf](Attention! Stay Focus!),</span>**<br/><em>to be appear in IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)</em> , Nashville, Jun. 2021.
 
 - **Tu Van Vo** and Chul Lee.<br/>
 **<span style="color: #444444">High Dynamic Range Video Synthesis Using Superpixel-Based IlluminanceInvariant Motion Estimation,</span>**<br/> in <em>IEEE Access</em>, vol. 8, pp. 24576-24587,2020.
