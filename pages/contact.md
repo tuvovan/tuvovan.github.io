@@ -9,4 +9,10 @@ weight: 7
 
 # **Contact**
 
-Have any further questions about my credentials or possible future projects? Check out my <a target='_blank' rel='noopener noreferrer' href="vovantu.hust@gmail.com" >Email </a>, <a target='_blank' rel='noopener noreferrer' href="https://github.com/tuvovan">github</a>, and I'll get in touch with you as soon as I can. Thank you for stopping by!  
+Have any further questions about my credentials or possible future projects? </br>
+Reach me here: <a href='vovantu.hust@gmail.com'>mail</a></br>
+Or check out my <a href='https://github.com/tuvovan'>github</a>, my <a href='https://linkedin.com/in/tuvv'>Linkedin></a></br>
+Or follow me on <a href='tuvovan.medium.com'>Medium</a>.</br>, 
+and I'll get in touch with you as soon as I can. </br>
+
+Thank you for stopping by!  
