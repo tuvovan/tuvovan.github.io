@@ -1,6 +1,11 @@
+- title: Research Scientist - Korea
+  from: 2022
+  to: present
+  description: • Working on Low-Level Computer Vision tasks.<br>
+
 - title: Deep Learning Engineer - Korea
   from: 2019
-  to: present
+  to: 2022
   description: • Doing deep learning, gathering data, making models for the medication behavior analysis.<br>
                • Making machine learning pipeline using kubeflow and run them on Azure. <br>
                • Developing the AutoLabeler which automatically generate bounding boxes for object detection tasks.
