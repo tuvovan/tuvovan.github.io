@@ -17,10 +17,10 @@ I'm interested in solving low-level computer vision tasks such as Low-light imag
 Checkout my <a href="http://www.github.com/tuvovan">github</a>.
 
 <div class="row">
-{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
-{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
+{% include about/timeline.html %}
 </div>
 
 <div class="row">
-{% include about/timeline.html %}
+{% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
+{% include about/skills.html title="Other Skills" source=site.data.other-skills %}
 </div>
