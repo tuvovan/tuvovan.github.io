@@ -30,7 +30,8 @@ When a customer signs up, one needs those kinds of information to fill in
 - phone number
 
 Example:
-| Syntax | Description | Email | Date of birth | Phone number |
+
+| Firstname | Lastname | Email | Date of birth | Phone number |
 | ----------- | ----------- | ----- | ------------- | ------------ |
 | Ana | Laurel | ana_laurel@yahoo.com | 02/01/1990 | 3102105770|
 
@@ -82,4 +83,5 @@ So we can imagine that we have a few approaches as follow:
 - Some comments on the results:
   - XGBoost seems to have the best performance then we decided to go with it. To apply the model on the real data and perform dedupe, we first group the user's data into different group using email and phone number. The model will run on each group to avoid the complexity.
 
-### Reference <a href="https://colab.research.google.com/drive/1NOFt6MPTGalJHCjBmhxOoCOn_D3Q1M0R?usp=sharing">Google Colab</a>
+### Reference 
+<a href="https://colab.research.google.com/drive/1NOFt6MPTGalJHCjBmhxOoCOn_D3Q1M0R?usp=sharing">Google Colab</a>
