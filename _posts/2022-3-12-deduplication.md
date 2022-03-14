@@ -117,6 +117,7 @@ So we can imagine that we have a few approaches as follow:
     - remove “-” and convert to integer (“01-01-1800” → 01011800)
 
     - replace NaN value in phone number with “99999999999”
+    
 ```
 # helper function to encode date and cell number
 def date_encode(entry):
