@@ -1,9 +1,16 @@
 ---
 title: Deduplication
-tags: [Deep Learning, Artificial Intelligence, Batch]
+tags:
+  [
+    Deep Learning,
+    Artificial Intelligence,
+    Machine Learning,
+    XGBoost,
+    Logistic Regression,
+  ]
 style: fill
 color: secondary
-description: My Understanding about this Awesome Layer.
+description: My approach to dedupe users's data.
 ---
 
 <!--
@@ -31,9 +38,9 @@ When a customer signs up, one needs those kinds of information to fill in
 
 Example:
 
-| Firstname | Lastname | Email | Date of birth | Phone number |
-| ----------- | ----------- | ----- | ------------- | ------------ |
-| Ana | Laurel | ana_laurel@yahoo.com | 02/01/1990 | 3102105770|
+| Firstname | Lastname | Email                | Date of birth | Phone number |
+| --------- | -------- | -------------------- | ------------- | ------------ |
+| Ana       | Laurel   | ana_laurel@yahoo.com | 02/01/1990    | 3102105770   |
 
 ### Algorithm:
 
@@ -61,8 +68,9 @@ So we can imagine that we have a few approaches as follow:
 
 - Main steps:
   - Collect data
-  We used [dedupe](https://github.com/dedupeio/dedupe) active labelling tool to label the data.
-  The data will be stored in a *json* format as follow:
+    We used [dedupe](https://github.com/dedupeio/dedupe) active labelling tool to label the data.
+    The data will be stored in a _json_ format as follow:
+
 ```
   {
   "distinct": [
@@ -110,14 +118,14 @@ So we can imagine that we have a few approaches as follow:
 }
 ```
 
-  - Clean data
+- Clean data
 
-    - replace NaN value in date of birth with “01-01-1800”
+  - replace NaN value in date of birth with “01-01-1800”
 
-    - remove “-” and convert to integer (“01-01-1800” → 01011800)
+  - remove “-” and convert to integer (“01-01-1800” → 01011800)
 
-    - replace NaN value in phone number with “99999999999”
-    
+  - replace NaN value in phone number with “99999999999”
+
 ```
 # helper function to encode date and cell number
 def date_encode(entry):
@@ -134,10 +142,12 @@ def cell_encode(entry):
   in_str_list = [int(i) for i in int_str]
   return in_str_list
 ```
-  - Vectorize:
 
-    - use TfidfVectorizer library of sklearn
-    - the final feature has shape of 40 _ 198 for match and 40 _ 198 for distinct.
+- Vectorize:
+
+  - use TfidfVectorizer library of sklearn
+  - the final feature has shape of 40 _ 198 for match and 40 _ 198 for distinct.
+
 ```
   # encoding
   tfidf_vectorizer1 = TfidfVectorizer(lowercase=False,max_features= 46)
@@ -158,13 +168,15 @@ def cell_encode(entry):
   birthd2_tfidf = np.array(df_birth_d['birth2'].tolist())
 ```
 
-  - Train and test model: as the test data is not available right now so models are trained and tested using the same data (quite dummy)
-    - Logistic Regression: `Recall: 0.8 Precision: 0.9831932773109244`
-    - Linear SVM: Recall: `0.8 Precision: 0.9831932773109244`
-    - XGBoost: `Recall: 1.0 Precision: 1.0`
+- Train and test model: as the test data is not available right now so models are trained and tested using the same data (quite dummy)
+
+  - Logistic Regression: `Recall: 0.8 Precision: 0.9831932773109244`
+  - Linear SVM: Recall: `0.8 Precision: 0.9831932773109244`
+  - XGBoost: `Recall: 1.0 Precision: 1.0`
 
 - Some comments on the results:
   - XGBoost seems to have the best performance then we decided to go with it. To apply the model on the real data and perform dedupe, we first group the user's data into different group using email and phone number. The model will run on each group to avoid the complexity.
 
-### Reference 
+### Reference
+
 <a href="https://colab.research.google.com/drive/1NOFt6MPTGalJHCjBmhxOoCOn_D3Q1M0R?usp=sharing">Google Colab</a>
