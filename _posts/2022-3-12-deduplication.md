@@ -172,7 +172,7 @@ So we can imagine that we have a few approaches as follow:
 - Train and test model: as the test data is not available right now so models are trained and tested using the same data (quite dummy)
 
   - Logistic Regression: `Recall: 0.8 Precision: 0.9831932773109244`
-  - Linear SVM: Recall: `0.8 Precision: 0.9831932773109244`
+  - Linear SVM: `Recall: 0.8 Precision: 0.9831932773109244`
   - XGBoost: `Recall: 1.0 Precision: 1.0`
 
 - Some comments on the results:
