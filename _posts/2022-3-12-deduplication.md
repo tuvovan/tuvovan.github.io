@@ -68,6 +68,7 @@ So we can imagine that we have a few approaches as follow:
 
 - Main steps:
   - Collect data
+    
     We used [dedupe](https://github.com/dedupeio/dedupe) active labelling tool to label the data.
     The data will be stored in a _json_ format as follow:
 
