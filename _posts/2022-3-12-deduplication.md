@@ -127,20 +127,20 @@ So we can imagine that we have a few approaches as follow:
   - replace NaN value in phone number with “99999999999”
 
 ```
-# helper function to encode date and cell number
-def date_encode(entry):
-  entry = entry.replace('-', '')
-  entry = list(entry)
-  entry_list = [int(i) for i in entry]
-  return entry_list
+  # helper function to encode date and cell number
+  def date_encode(entry):
+    entry = entry.replace('-', '')
+    entry = list(entry)
+    entry_list = [int(i) for i in entry]
+    return entry_list
 
-def cell_encode(entry):
-  entry = entry.split('.')[0]
-  int_str = str(int(entry))
-  if len(int_str) < 11:
-    int_str += '0' * (11 - len(int_str))
-  in_str_list = [int(i) for i in int_str]
-  return in_str_list
+  def cell_encode(entry):
+    entry = entry.split('.')[0]
+    int_str = str(int(entry))
+    if len(int_str) < 11:
+      int_str += '0' * (11 - len(int_str))
+    in_str_list = [int(i) for i in int_str]
+    return in_str_list
 ```
 
 - Vectorize:
@@ -176,6 +176,78 @@ def cell_encode(entry):
 
 - Some comments on the results:
   - XGBoost seems to have the best performance then we decided to go with it. To apply the model on the real data and perform dedupe, we first group the user's data into different group using email and phone number. The model will run on each group to avoid the complexity.
+
+```
+  inference algorithm
+  from tqdm import tqdm
+  def find_dup(df, tf1, tf2):
+      df_og = df.copy()
+      df = df.reset_index()  # make sure indexes pair with number of rows
+      df['cellphone'] = df['cellphone'].replace(' ', '99999999999', regex = True)
+      df['birthdate'] = df['birthdate'].replace(' ', '1800-01-01', regex = True)
+      df['firstname'] = df['firstname'].replace(' ', 'firstname', regex = True)
+      df['lastname'] = df['lastname'].replace(' ', 'lastname', regex = True)
+      df['birthdate'] = df['birthdate'] = df['birthdate'].apply(date_encode_pd)
+      df['cellphone'] = df['cellphone'].apply(cell_encode_pd)
+      # print(df['firstname'][:5])
+      name = [str(first) + ' ' + str(last) for first, last in zip(list(df['firstname']), list(df['lastname']))]
+      df['name'] = name
+      name_tfidf = tf1.transform(df['name'])
+      mail_tfidf = tf2.transform(df['emailname'])
+      cell_tfidf = np.array(df['cellphone'].tolist())
+      birth_tfidf = np.array(df['birthdate'].tolist())
+
+      # new_df = pd.DataFrame(columns=df.columns)
+      dups = []
+      for i in tqdm(range(name_tfidf.shape[0]-1)):
+          new_df = pd.DataFrame(columns=df.columns)
+          namei, emaili,	celli,	birthi = name_tfidf[i], mail_tfidf[i], cell_tfidf[i], birth_tfidf[i]
+          # new_df = new_df.append( [df.iloc[i]] )
+          for j in range(i+1, name_tfidf.shape[0]):
+              namej, emailj,	cellj,	birthj = name_tfidf[j], mail_tfidf[j], cell_tfidf[j], birth_tfidf[j]
+
+              # x1 = hstack((namei, namej)).toarray()
+              # x2 = hstack((emaili, emailj)).toarray()
+              # x3 = np.hstack((celli, cellj))
+              # x4 = np.hstack((birthi, birthj))
+              # x3, x4 = np.expand_dims(x3, axis=0), np.expand_dims(x4, axis=0)
+              x1 = namei.toarray() - namej.toarray()
+              x2 = emaili.toarray() - emailj.toarray()
+              x3 = celli - cellj
+              x4 = birthi - birthj
+              x3, x4 = np.expand_dims(x3, axis=0), np.expand_dims(x4, axis=0)
+              data = np.hstack((x1, x2, x3, x4))
+              pad_need = 99 - data.shape[1]
+              data = np.expand_dims(np.pad(data[0], (0, pad_need), 'constant'), axis=0)
+              predict_y = cal_clf.predict_proba(data[:,:99])[0]
+              # print(predict_y, np.argmax(predict_y))
+              if np.argmax(predict_y) == 1:
+                  print(predict_y)
+                  dups.append(j)
+                  # new_df = new_df.append( [df.iloc[j]] )
+
+      df_og = df_og.reset_index(drop=True)
+      dups = set(dups)
+      not_dups = set(range(len(df))) - dups
+      new_df = df_og.loc[list(not_dups)]
+      print(new_df.head())
+      new_df.to_csv('/content/drive/MyDrive/Colab Notebooks/duplicated.csv', mode='a', header=False)
+```
+
+```
+  rs_df = pd.DataFrame(columns=data.columns)
+  rs_df.to_csv('/content/drive/MyDrive/Colab Notebooks/duplicated.csv')
+  for cell in cellphone_list:
+      sub_df = data.loc[data.cellphone==cell]
+      if len(sub_df) < 2:
+          continue
+      email_list = sub_df['emailname'].unique().tolist()
+      for email in email_list:
+          subsub_df = sub_df.loc[sub_df.emailname==email]
+          if len(subsub_df) < 2:
+              continue
+          find_dup(subsub_df, tfidf_vectorizer1, tfidf_vectorizer2, tfidf_vectorizer3, tfidf_vectorizer4)
+```
 
 ### Reference
 
