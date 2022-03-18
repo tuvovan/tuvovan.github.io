@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: default
 title: CV
 permalink: /cv/
@@ -13,4 +13,4 @@ The latest changes to <a target='_blank' rel='noopener noreferrer' href="https:/
 
 # **Resume**
 
-Likewise, the newest version of <a target='_blank' rel='noopener noreferrer' href="https://tuvovan.github.io/assets/pdf/CV_Tu.pdf">my resume</a> can be found here on my portfolio or also on my LinkedIn page.
+Likewise, the newest version of <a target='_blank' rel='noopener noreferrer' href="https://tuvovan.github.io/assets/pdf/CV_Tu.pdf">my resume</a> can be found here on my portfolio or also on my LinkedIn page. -->
