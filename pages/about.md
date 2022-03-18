@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-weight: 6
+weight: 1
 ---
 
 # **About Me**
@@ -14,7 +14,7 @@ I got a Master Degree in the major of Computer Engineering in South Korea in 201
 
 I'm interested in solving low-level computer vision tasks such as Low-light image enhancement, High dynamic range imaging.
 
-Checkout my <a href="http://www.github.com/tuvovan">github</a>.
+Checkout my <a href="http://www.github.com/tuvovan">github</a> and my <a href="https://tuvovan.github.io/assets/pdf/CV_Tu.pdf">resume</a>.
 
 <div class="row">
 {% include about/timeline.html %}
