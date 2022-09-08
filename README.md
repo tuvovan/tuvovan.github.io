@@ -1,8 +1,10 @@
-<div align="center">
-    <h1>Vo Van Tu's Portfolio</h1>
-    <i>My personal portfolio built using portfolYOU, a beautiful portfolio Jekyll theme that works with GitHub Pages.</i>
-    <br><br>
-    <span style="display: block; margin-left: auto; margin-right: auto; width: 50%"><img src="screenshot.gif"></span>
-    <br/>
-    <sub><sup>© 2020 portfolYOU, licensed under the <a href="./LICENSE">MIT License</a>.</sup></sub>
-</div>
+# xishen0220.github.io
+Welcome to my personal webpage...
+
+The template is borrowed heavily from [Jon Barron](https://github.com/jonbarron/website).
+
+I also take some elements from the websites of [Thibault Groueix](https://imagine.enpc.fr/~groueixt/), [Tom Monnier](http://imagine.enpc.fr/~monniert/).
+
+Feel free to take the code, I am happy this repo is useful.
+
+You may want to take a look at the page of [Van Nguyen NGUYEN](https://nv-nguyen.github.io/).
