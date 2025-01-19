@@ -84,7 +84,43 @@
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
+            <tr onmouseout="judeopt_stop()" onmouseover="judeopt_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='judeopt_image'>
+                    <img src='images/jude.gif' width="160"></div>
+                  <img src='images/jude.gif' width="160">
+                </div>
+                <script type="text/javascript">
+                  function judeopt_start() {
+                    document.getElementById('judeopt_image').style.opacity = "1";
+                  }
+  
+                  function judeopt_stop() {
+                    document.getElementById('judeopt_image').style.opacity = "0";
+                  }
+                  skyopt_stop()
+                </script>
+              </td>
 
+          <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://arxiv.org/pdf/2412.07527">
+                <span class="papertitle">Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)</span>
+              </a>
+              <br>
+              <strong>Tu Vo</strong>
+              <a>Chan Y. Park</a>
+              <br>
+              <em>WACV</em>, 2025
+              <br>
+              <a href="https://arxiv.org/pdf/2412.07527">Paper</a>
+              <a href="https://jude.kc-ml2.com/">Project Page</a>
+              <p></p>
+              <p>Tackle a joint low-light and blurry image problem.</p>
+            </td>
+          </tr> 
+          
           <tr onmouseout="rcvopt_stop()" onmouseover="rcvopt_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
               <div class="one">
