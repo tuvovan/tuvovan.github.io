@@ -133,3 +133,13 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+.hoverZoomLink {
+  display: block;
+  transform-origin: center;
+  transition: transform .2s ease-in-out;
+}
+
+.hoverZoomLink:hover {
+  transform: scale(1.05);
+}
