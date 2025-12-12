@@ -137,9 +137,10 @@ span.highlight {
 .hoverZoomLink {
   display: block;
   transform-origin: center;
+  transform: scale(1.12);
   transition: transform .2s ease-in-out;
 }
 
 .hoverZoomLink:hover {
-  transform: scale(1.05);
+  transform: scale(1.17);
 }
