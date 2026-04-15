@@ -1,298 +1,497 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Tu Vo</title>
-
+    <meta charset="UTF-8">
     <meta name="author" content="Tu Vo">
+    <meta
+      name="description"
+      content="Tu Vo is a research scientist in Seoul working on computer vision, deep learning, and image restoration."
+    >
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#c99718" id="theme-color-meta">
+    <title>Tu Vo | Research Scientist</title>
+    <script>
+      (function () {
+        var theme = "light";
+
+        try {
+          var storedTheme = localStorage.getItem("theme");
+          if (storedTheme === "light" || storedTheme === "dark") {
+            theme = storedTheme;
+          } else if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            theme = "dark";
+          }
+        } catch (error) {
+          theme = "light";
+        }
+
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Tu Vo
-                </p>
-                <p>I'm a research scientist at <a href="https://www.kc-ml2.com/en/">KC Machine Learning Lab (ML2)</a> in Seoul, South Korea, working on Computer Vision. (Last update: Feb 2022)</a>.
-                </p>
+    <header class="site-header">
+      <div class="container topbar">
+        <a class="brand" href="#about" aria-label="Tu Vo homepage">TV</a>
+        <div class="topbar-controls">
+          <nav class="section-nav" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#research">Research</a>
+            <a href="#service">Service</a>
+            <a href="data/CV_TuVo.pdf">CV</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch between light and dark mode"
+            aria-pressed="false"
+          >
+            <span class="theme-toggle-swatch" aria-hidden="true"></span>
+            <span class="theme-toggle-text" id="theme-toggle-text">Night mode</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="about">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Research Scientist / Computer Vision / Seoul</p>
+            <h1>Tu Vo</h1>
+            <p class="hero-subtitle">
+              Research Scientist at
+              <a href="https://www.kc-ml2.com/en/" rel="noopener noreferrer">KC Machine Learning Lab (ML2)</a>
+            </p>
+            <p class="hero-description">
+              I work on computer vision and deep learning, with a focus on image restoration problems such as
+              deblurring, low-light enhancement, and HDR imaging.
+            </p>
+            <p class="hero-description">
+              I received my M.S. from
+              <a href="http://cilab.dongguk.edu/" rel="noopener noreferrer">CILAB</a>
+              at
+              <a href="https://www.pknu.ac.kr/main" rel="noopener noreferrer">Pukyong National University</a>,
+              and my B.S. in Electrical Engineering from
+              <a href="https://en.hust.edu.vn/" rel="noopener noreferrer">Hanoi University of Science and Technology</a>.
+              I am always open to new opportunities and collaborations.
+            </p>
+
+            <div class="link-cluster">
+              <a class="button button-primary" href="data/CV_TuVo.pdf">Download CV</a>
+              <a class="button" href="mailto:vovantu.hust@gmail.com">Email</a>
+            </div>
+
+            <div class="social-row">
+              <a href="https://scholar.google.com/citations?user=MMz9pyEAAAAJ&amp;hl=en" rel="noopener noreferrer">Google Scholar</a>
+              <a href="https://github.com/tuvovan/" rel="noopener noreferrer">GitHub</a>
+            </div>
+
+            <ul class="topic-list" aria-label="Research topics">
+              <li>Deblurring</li>
+              <li>Low-Light Enhancement</li>
+              <li>HDR Imaging</li>
+              <li>Deep Unrolling</li>
+            </ul>
+          </div>
+
+          <aside class="profile-card">
+            <div class="profile-image-frame">
+              <img
+                class="profile-photo"
+                src="images/image.jpg"
+                alt="Portrait of Tu Vo"
+                width="480"
+                height="640"
+              >
+            </div>
+
+            <div class="profile-card-body">
+              <div class="profile-row">
+                <span class="profile-label">Current role</span>
+                <span>Research Scientist, KC ML2</span>
+              </div>
+              <div class="profile-row">
+                <span class="profile-label">Based in</span>
+                <span>Seoul, South Korea</span>
+              </div>
+              <div class="profile-row">
+                <span class="profile-label">Research areas</span>
+                <span>Computer Vision, Deep Learning, Image Restoration</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container summary-grid">
+          <article class="mini-card">
+            <p class="card-label">Current focus</p>
+            <h2>Model-based vision systems</h2>
+            <p>
+              Building deep unrolling methods for defocus deblurring, joint low-light enhancement, and
+              physically grounded image restoration.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <p class="card-label">Recent milestone</p>
+            <h2>NeurIPS COML 2025</h2>
+            <p>
+              My recent work on error-aware deep unrolling for single-image defocus deblurring was accepted
+              to the NeurIPS workshop on Constrained Optimization for Machine Learning.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <p class="card-label">Open to</p>
+            <h2>Collaboration and new opportunities</h2>
+            <p>
+              I enjoy connecting on research collaborations, applied computer vision projects, and
+              industry-facing work that benefits from rigorous vision models.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="news">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Updates</p>
+            <h2>News</h2>
+            <p class="section-copy">Recent milestones, accepted papers, and activities.</p>
+          </div>
+
+          <div class="section-card timeline">
+            <article class="news-item news-item-featured">
+              <time datetime="2025-09-23">Sep 23, 2025</time>
+              <div>
+                <p class="news-title">ErA accepted to NeurIPS COML 2025</p>
                 <p>
-                  I got the Master Degree from <a href="http://cilab.dongguk.edu/">CILAB</a> at <a href="https://www.pknu.ac.kr/main">Pukyong National University</a>. Before that, I received B.S. degrees in Electrical from <a href="https://en.hust.edu.vn/">Hanoi University of Science and Technology</a>.
-                  I am always open to new opportunities and collaborations. Please contact me if you are interested in my work or want to connect with me.
+                  Our paper
+                  <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">
+                    ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Debluring
+                  </a>
+                  was accepted, and the
+                  <a href="data/COML_poster_portrait.pdf">poster</a>
+                  is available.
                 </p>
-                <p style="text-align:center">
-                  <a href="mailto:vovantu.hust@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="data/CV_TuVo.pdf">CV</a> &nbsp;/&nbsp;
-                  <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp;/&nbsp; -->
-                  <a href="https://scholar.google.com/citations?user=MMz9pyEAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
-                  <!-- <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp;/&nbsp; -->
-                  <a href="https://github.com/tuvovan/">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/image.jpg"><img style="width:80%;max-width:200px;object-fit: cover; display:block; margin:0 auto;" alt="profile photo" src="images/image.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
+              </div>
+            </article>
 
-          <!-- ------------------------------------------------------ -->
-          <table>
-            <tbody>
-              <tr>
-                <td style="padding:20px;">
-                  <h2>News</h2>
-                  <hr/>
-                  <ul>
-                    <li>
-                      <b style="background-color:#ddd;"><img src="images/flame.png " width="20"/> 23 / 09 / 2025</b>&emsp;
-                      Our paper ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Debluring has been accepted to <a href="https://constrained-opt-ml.github.io/"> Neurips COML 2025</a> - <a href="data/COML_poster_portrait.pdf"> Poster</a>.
-                    </li>
-                    <li>
-                      <b style="background-color:#ddd;">29 / 10 / 2024</b>&emsp;
-                      Our paper <a href="https://arxiv.org/pdf/2412.07527">Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)</a> has been accepted to <a href="https://wacv2025.thecvf.com/"> WACV 2025</a> - <a href="https://jude.kc-ml2.com/"> Project Page</a>.
-                    </li>
-                    <li>
-                      <b style="background-color:#ddd;">05 / 09 / 2023</b>&emsp;
-                      We ranked 6th in the Budgeted Model Training challenge - <a href="https://sites.google.com/view/rcv2023/"> ICCV 2023</a>.
-                    </li>
-                    <li>
-                      <b style="background-color:#ddd;">01 / 02 / 2022</b>&emsp;
-                      I joined <a href="https://www.kc-ml2.com/en"> KC Machine Learning Lab</a> as a Research Scientist, work on Computer Vision.
-                    </li>
-                    <li>
-                      <b style="background-color:#ddd;">16 / 04 / 2021</b>&emsp;
-                      My paper <a href="https://github.com/tuvovan/ATTSF"> Attention! Stay Focus!</a> is published on Proceeding of CVPRW 2021.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <hr/>
+            <article class="news-item">
+              <time datetime="2024-10-29">Oct 29, 2024</time>
+              <div>
+                <p class="news-title">JUDE accepted to WACV 2025</p>
                 <p>
-                  I am interested in Computer Vision and Deep Learning. My research mainly focuses on finding solutions to low-level vision tasks such as <i>Deblurring</i>, <i>High Dynamic Range Image</i> or <i>Low-light Image Enhancement</i>. </br> Some papers are <span class="highlight">highlighted</span>.
+                  Our paper
+                  <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">
+                    Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)
+                  </a>
+                  was accepted to WACV 2025, with a
+                  <a href="https://jude.kc-ml2.com/" rel="noopener noreferrer">project page</a>.
                 </p>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
-          <tr onmouseout="eduopt_stop()" onmouseover="eduopt_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='judeopt_image'>
-                  <img src='images/edu.gif' width="160"></div>
-                <img src='images/edu.gif' width="160">
               </div>
-              <script type="text/javascript">
-                function judeopt_start() {
-                  document.getElementById('judeopt_image').style.opacity = "1";
-                }
+            </article>
 
-                function judeopt_stop() {
-                  document.getElementById('judeopt_image').style.opacity = "0";
-                }
-                skyopt_stop()
-              </script>
-            </td>
-          
-          <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://openreview.net/forum?id=w8fFSm4RR9&referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)">
-                <span class="papertitle">ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Debluring</span>
-              </a>
-              <br>
-              <strong>Tu Vo</strong>
-              <a>Chan Y. Park</a>
-              <br>
-              <em>Neurips COML</em>, 2025
-              <br>
-              <a href="https://openreview.net/forum?id=w8fFSm4RR9&referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)">Paper</a>
-              <a href="data/COML_poster_portrait.pdf">Poster</a>
-              <p></p>
-            </td>
-          </tr> 
-
-          <tr onmouseout="judeopt_stop()" onmouseover="judeopt_start()" bgcolor="#ffffd0">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='judeopt_image'>
-                  <img src='images/jude.gif' width="160"></div>
-                <img src='images/jude.gif' width="160">
-              </div>
-              <script type="text/javascript">
-                function judeopt_start() {
-                  document.getElementById('judeopt_image').style.opacity = "1";
-                }
-
-                function judeopt_stop() {
-                  document.getElementById('judeopt_image').style.opacity = "0";
-                }
-                skyopt_stop()
-              </script>
-            </td>
-
-          <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/2412.07527">
-                <span class="papertitle">Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)</span>
-              </a>
-              <br>
-              <strong>Tu Vo</strong>
-              <a>Chan Y. Park</a>
-              <br>
-              <em>WACV</em>, 2025
-              <br>
-              <a href="https://arxiv.org/pdf/2412.07527">Paper</a>
-              <a href="https://jude.kc-ml2.com/">Project Page</a>
-              <p></p>
-              <p>Tackle a joint low-light and blurry image problem.</p>
-            </td>
-          </tr> 
-          
-          <tr onmouseout="rcvopt_stop()" onmouseover="rcvopt_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='rcvopt_image'>
-                  <img src='images/rcv.png' width="160"></div>
-                <img src='images/rcv.png' width="160">
-              </div>
-              <script type="text/javascript">
-                function rcvopt_start() {
-                  document.getElementById('rcvopt_image').style.opacity = "1";
-                }
-
-                function rcvopt_stop() {
-                  document.getElementById('rcvopt_image').style.opacity = "0";
-                }
-                skyopt_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf">
-                <span class="papertitle">Benchmarking Model Training and Inference for Resource-Constrained Deep Learning</span>
-              </a>
-              <br>
-              <a>...</a>
-              <strong>Tu Vo</strong>
-              <a>...</a>
-              <br>
-              <em>ICCVW</em>, 2023  
-              <br>
-              <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf">Paper</a>
-              <p></p>
-              <p>If you want to get your best model with a low budget. Take a look.</p>
-            </td>
-          </tr> 
-
-          <tr onmouseout="attopt_stop()" onmouseover="attopt_start()" bgcolor="#ffffd0">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='rcvopt_image'>
-                  <img src='images/attsf.gif' width="160"></div>
-                <img src='images/attsf.gif' width="160">
-              </div>
-              <script type="text/javascript">
-                function rcvopt_start() {
-                  document.getElementById('attopt_image').style.opacity = "1";
-                }
-
-                function rcvopt_stop() {
-                  document.getElementById('attopt_image').style.opacity = "0";
-                }
-                skyopt_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf">
-                <span class="papertitle">Attention! Stay Focus!</span>
-              </a>
-              <br>
-              <strong>Tu Vo</strong>
-              <br>
-              <em>CVPRW</em>, 2021  
-              <br>
-              <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf">Paper</a>
-              /
-              <a href="https://github.com/tuvovan/ATTSF/">Code</a>
-              <p></p>
-              <p>A model to generate all-in-focus image from dual views.</p>
-            </td>
-          </tr> 
-
-          <tr onmouseout="accessopt_stop()" onmouseover="attopt_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='accessopt_image'>
-                  <img src='images/access2020.jpeg' width="160"></div>
-                <img src='images/access2020.jpeg' width="160">
-              </div>
-              <script type="text/javascript">
-                function rcvopt_start() {
-                  document.getElementById('accessopt_image').style.opacity = "1";
-                }
-
-                function rcvopt_stop() {
-                  document.getElementById('accessopt_image').style.opacity = "0";
-                }
-                skyopt_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8977532">
-                <span class="papertitle">High Dynamic Range Video Synthesis Using Superpixel-Based Illuminance-Invariant Motion Estimation</span>
-              </a>
-              <br>
-              <strong>Tu Vo</strong>, 
-              <a href="http://cilab.dongguk.edu/">Chul Lee</a>
-              <br>
-              <em>CVPRW</em>, 2023  
-              <br>
-              <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8977532">Paper</a>
-              <p></p>
-              <p>Generating High Dynamic Range Video from alternative Low Dynamic Range Input Sequences.</p>
-            </td>
-          </tr> 
-          <!-- ------------------------------------------------------ -->
-          <table></table>
-            <tbody>
-              <tr>
-                <td style="padding:20px;">
-                  <h2>Community Activites</h2>
-                  <hr/>
-                  <ul>
-                    <li>
-                      <b>Conference Reviewer:</b>&emsp;WACV <a href="https://wacv2025.thecvf.com/">2025</a>, ICLR <a href="https://iclr.cc/">2025</a>, ECCV <a href="https://eccv.ecva.net/">2026</a>.
-                    </li>
-                  </ul>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  <p align="center"> <img src="https://komarev.com/ghpvc/?username=GITHUB-USERNAME&label=Profile%20views&color=ce9927&style=flat" alt="tuvovan" /> </p>
+            <article class="news-item">
+              <time datetime="2023-09-05">Sep 5, 2023</time>
+              <div>
+                <p class="news-title">6th place in the ICCV 2023 Budgeted Model Training Challenge</p>
+                <p>
+                  We ranked 6th in the
+                  <a href="https://sites.google.com/view/rcv2023/" rel="noopener noreferrer">Budgeted Model Training challenge</a>
+                  at ICCV 2023.
                 </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
-    <script type='text/javascript' id='mapmyvisitors' src='https://mapmyvisitors.com/map.js?cl=ffffff&w=320&t=n&d=TxgTVXdxUJREY5xxFVpggaYRQF31jtx-LpbFb0pmDPM'></script>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2022-02-01">Feb 1, 2022</time>
+              <div>
+                <p class="news-title">Joined KC Machine Learning Lab</p>
+                <p>
+                  I joined
+                  <a href="https://www.kc-ml2.com/en" rel="noopener noreferrer">KC Machine Learning Lab</a>
+                  as a Research Scientist working on computer vision.
+                </p>
+              </div>
+            </article>
+
+            <article class="news-item">
+              <time datetime="2021-04-16">Apr 16, 2021</time>
+              <div>
+                <p class="news-title">Attention! Stay Focus! published at CVPRW 2021</p>
+                <p>
+                  My paper
+                  <a href="https://github.com/tuvovan/ATTSF" rel="noopener noreferrer">Attention! Stay Focus!</a>
+                  appeared in the CVPR Workshops.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Selected work</p>
+            <h2>Research</h2>
+            <p class="section-copy">
+              I am interested in computer vision and deep learning, especially low-level vision problems that
+              require strong physical priors and robust restoration strategies.
+            </p>
+          </div>
+
+          <div class="section-card research-shell">
+            <div class="chip-row" aria-label="Research themes">
+              <span class="chip">Image Restoration</span>
+              <span class="chip">Defocus Deblurring</span>
+              <span class="chip">Low-Light Enhancement</span>
+              <span class="chip">HDR Imaging</span>
+            </div>
+
+            <div class="paper-list">
+              <article class="paper-card paper-card-featured">
+                <div class="paper-media">
+                  <img src="images/edu.gif" alt="Preview image for ErA" loading="lazy">
+                </div>
+                <div class="paper-body">
+                  <div class="paper-topline">
+                    <span class="venue-badge">NeurIPS COML 2025</span>
+                    <span class="featured-badge">Featured</span>
+                  </div>
+                  <h3>
+                    <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">
+                      ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Debluring
+                    </a>
+                  </h3>
+                  <p class="paper-authors"><strong>Tu Vo</strong>, Chan Y. Park</p>
+                  <p class="paper-summary">
+                    An error-aware deep unrolling framework for single-image defocus deblurring with strong
+                    quantitative results across standard benchmarks.
+                  </p>
+                  <div class="paper-links">
+                    <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">Paper</a>
+                    <a href="data/COML_poster_portrait.pdf">Poster</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="paper-card paper-card-featured">
+                <div class="paper-media">
+                  <img src="images/jude.gif" alt="Preview image for JUDE" loading="lazy">
+                </div>
+                <div class="paper-body">
+                  <div class="paper-topline">
+                    <span class="venue-badge">WACV 2025</span>
+                    <span class="featured-badge">Featured</span>
+                  </div>
+                  <h3>
+                    <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">
+                      Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)
+                    </a>
+                  </h3>
+                  <p class="paper-authors"><strong>Tu Vo</strong>, Chan Y. Park</p>
+                  <p class="paper-summary">
+                    A physically inspired joint restoration pipeline that tackles nighttime blur and low-light
+                    degradation in a single unrolled framework.
+                  </p>
+                  <div class="paper-links">
+                    <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">Paper</a>
+                    <a href="https://jude.kc-ml2.com/" rel="noopener noreferrer">Project Page</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="paper-card">
+                <div class="paper-media">
+                  <img src="images/rcv.png" alt="Preview image for the RCV challenge paper" loading="lazy">
+                </div>
+                <div class="paper-body">
+                  <div class="paper-topline">
+                    <span class="venue-badge">ICCVW 2023</span>
+                  </div>
+                  <h3>
+                    <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">
+                      Benchmarking Model Training and Inference for Resource-Constrained Deep Learning
+                    </a>
+                  </h3>
+                  <p class="paper-authors">Rishabh Tiwari, Arnav Chavan, ... <strong>Tu Vo</strong>, and collaborators</p>
+                  <p class="paper-summary">
+                    A challenge report on methods for training and inference under strict memory and time
+                    constraints, built around the ICCV 2023 RCV workshop tracks.
+                  </p>
+                  <div class="paper-links">
+                    <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">Paper</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="paper-card">
+                <div class="paper-media">
+                  <img src="images/attsf.gif" alt="Preview image for Attention! Stay Focus!" loading="lazy">
+                </div>
+                <div class="paper-body">
+                  <div class="paper-topline">
+                    <span class="venue-badge">CVPRW 2021</span>
+                  </div>
+                  <h3>
+                    <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">
+                      Attention! Stay Focus!
+                    </a>
+                  </h3>
+                  <p class="paper-authors"><strong>Tu Vo</strong></p>
+                  <p class="paper-summary">
+                    A model for generating all-in-focus imagery from dual-view inputs.
+                  </p>
+                  <div class="paper-links">
+                    <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">Paper</a>
+                    <a href="https://github.com/tuvovan/ATTSF/" rel="noopener noreferrer">Code</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="paper-card">
+                <div class="paper-media">
+                  <img src="images/access2020.jpeg" alt="Preview image for HDR video synthesis work" loading="lazy">
+                </div>
+                <div class="paper-body">
+                  <div class="paper-topline">
+                    <span class="venue-badge">IEEE Access 2020</span>
+                  </div>
+                  <h3>
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">
+                      High Dynamic Range Video Synthesis Using Superpixel-Based Illuminance-Invariant Motion Estimation
+                    </a>
+                  </h3>
+                  <p class="paper-authors"><strong>Tu Vo</strong>, Chul Lee</p>
+                  <p class="paper-summary">
+                    A method for synthesizing HDR video from alternating low dynamic range sequences using
+                    illumination-invariant motion estimation.
+                  </p>
+                  <div class="paper-links">
+                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">Paper</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="service">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker">Community</p>
+            <h2>Service &amp; Activities</h2>
+            <p class="section-copy">A few ways I contribute beyond my published work.</p>
+          </div>
+
+          <div class="service-grid">
+            <article class="mini-card">
+              <p class="card-label">Conference service</p>
+              <h2>Reviewer</h2>
+              <p>WACV 2025, ICLR 2025, and ECCV 2026.</p>
+            </article>
+
+            <article class="mini-card">
+              <p class="card-label">Collaboration</p>
+              <h2>Let's connect</h2>
+              <p>
+                If you are interested in my work, I am happy to talk about collaboration opportunities,
+                applied research, or future projects.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>Tu Vo / Computer Vision and Image Restoration</p>
+        <div class="footer-links">
+          <a href="mailto:vovantu.hust@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=MMz9pyEAAAAJ&amp;hl=en" rel="noopener noreferrer">Scholar</a>
+          <a href="https://github.com/tuvovan/" rel="noopener noreferrer">GitHub</a>
+          <a
+            class="visitor-link"
+            href="https://mapmyvisitors.com/web/1bzd0"
+            rel="noopener noreferrer"
+            aria-label="Visitor count for this website"
+          >
+            Visitor stats
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="visitor-tracker" aria-hidden="true">
+      <script
+        type="text/javascript"
+        id="mapmyvisitors"
+        src="https://mapmyvisitors.com/map.js?cl=ffffff&amp;w=320&amp;t=n&amp;d=TxgTVXdxUJREY5xxFVpggaYRQF31jtx-LpbFb0pmDPM"
+      ></script>
+    </div>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var themeToggle = document.getElementById("theme-toggle");
+        var themeToggleText = document.getElementById("theme-toggle-text");
+        var themeColorMeta = document.getElementById("theme-color-meta");
+        var themeColors = {
+          light: "#c99718",
+          dark: "#171a20"
+        };
+
+        function applyTheme(theme, persist) {
+          root.setAttribute("data-theme", theme);
+
+          if (themeToggle) {
+            themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+          }
+
+          if (themeToggleText) {
+            themeToggleText.textContent = theme === "dark" ? "Day mode" : "Night mode";
+          }
+
+          if (themeColorMeta) {
+            themeColorMeta.setAttribute("content", themeColors[theme]);
+          }
+
+          if (persist) {
+            try {
+              localStorage.setItem("theme", theme);
+            } catch (error) {
+              // Ignore storage failures and keep the theme in-memory.
+            }
+          }
+        }
+
+        var initialTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        applyTheme(initialTheme, false);
+
+        if (!themeToggle) {
+          return;
+        }
+
+        themeToggle.addEventListener("click", function () {
+          var nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          applyTheme(nextTheme, true);
+        });
+      })();
+    </script>
   </body>
 </html>
