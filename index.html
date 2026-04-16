@@ -179,6 +179,7 @@
         font-weight: 700;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        overflow: hidden;
       }
 
       .brand:hover,
@@ -255,7 +256,7 @@
       .hero-grid {
         grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.85fr);
         gap: 2rem;
-        align-items: center;
+        align-items: start;
       }
 
       .eyebrow,
@@ -357,15 +358,21 @@
 
       .profile-card {
         overflow: hidden;
+        display: grid;
+        grid-template-rows: minmax(0, 1fr) auto;
+        width: 100%;
+        align-self: start;
       }
 
       .profile-image-frame {
         padding: 1.15rem 1.15rem 0;
+        min-height: 0;
       }
 
       .profile-photo {
         width: 100%;
-        aspect-ratio: 5 / 6;
+        height: 100%;
+        min-height: 0;
         border-radius: 20px;
         object-fit: cover;
         object-position: center top;
@@ -528,6 +535,17 @@
         .paper-card {
           grid-template-columns: 1fr;
         }
+
+        .hero-grid {
+          gap: 1.5rem;
+        }
+
+        .profile-card {
+          width: 100%;
+          justify-self: start;
+          max-width: 32rem;
+          height: auto;
+        }
       }
 
       @media (max-width: 760px) {
@@ -605,8 +623,20 @@
           font-size: 0.98rem;
         }
 
+        .brand {
+          font-size: 0;
+          background:
+            url("images/image.jpg") center 18% / cover no-repeat;
+          border: 2px solid rgba(255, 255, 255, 0.68);
+          box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+        }
+
         .news-item {
           grid-template-columns: 1fr;
+        }
+
+        .profile-card {
+          display: none;
         }
       }
 
@@ -644,7 +674,7 @@
       }
     </style>
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260415-1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260416-2">
   </head>
 
   <body>
@@ -1063,6 +1093,9 @@
         var themeToggle = document.getElementById("theme-toggle");
         var themeToggleText = document.getElementById("theme-toggle-text");
         var themeColorMeta = document.getElementById("theme-color-meta");
+        var heroCopy = document.querySelector(".hero-copy");
+        var profileCard = document.querySelector(".profile-card");
+        var heroSyncFrame = 0;
         var themeColors = {
           light: "#c99718",
           dark: "#171a20"
@@ -1092,17 +1125,52 @@
           }
         }
 
+        function syncHeroProfileHeight() {
+          if (!heroCopy || !profileCard) {
+            return;
+          }
+
+          profileCard.style.height = "";
+
+          if (window.matchMedia("(max-width: 1024px)").matches) {
+            return;
+          }
+
+          var copyHeight = Math.ceil(heroCopy.getBoundingClientRect().height);
+
+          if (copyHeight > 0) {
+            profileCard.style.height = copyHeight + "px";
+          }
+        }
+
+        function requestHeroProfileSync() {
+          if (heroSyncFrame) {
+            cancelAnimationFrame(heroSyncFrame);
+          }
+
+          heroSyncFrame = requestAnimationFrame(function () {
+            heroSyncFrame = 0;
+            syncHeroProfileHeight();
+          });
+        }
+
         var initialTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
         applyTheme(initialTheme, false);
 
-        if (!themeToggle) {
-          return;
+        requestHeroProfileSync();
+        window.addEventListener("load", requestHeroProfileSync);
+        window.addEventListener("resize", requestHeroProfileSync);
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(requestHeroProfileSync).catch(function () {});
         }
 
-        themeToggle.addEventListener("click", function () {
-          var nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-          applyTheme(nextTheme, true);
-        });
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            var nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            applyTheme(nextTheme, true);
+          });
+        }
       })();
     </script>
   </body>
