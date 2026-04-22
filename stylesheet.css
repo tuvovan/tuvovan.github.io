@@ -96,15 +96,19 @@ body {
   min-height: 100vh;
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, var(--bg-top-left), transparent 30%),
-    radial-gradient(circle at top right, var(--bg-top-right), transparent 28%),
-    linear-gradient(180deg, var(--bg-start) 0%, var(--bg) 38%, var(--bg-end) 100%);
+  background: #ffffff;
   line-height: 1.65;
   transition:
     background-color 220ms ease,
     color 220ms ease,
     background 220ms ease;
+}
+
+:root[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top left, var(--bg-top-left), transparent 30%),
+    radial-gradient(circle at top right, var(--bg-top-right), transparent 28%),
+    linear-gradient(180deg, var(--bg-start) 0%, var(--bg) 38%, var(--bg-end) 100%);
 }
 
 img {
