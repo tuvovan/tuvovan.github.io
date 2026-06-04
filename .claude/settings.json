@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open index.html)",
+      "WebFetch(domain:mtntruong.github.io)",
+      "Bash([ -f \"images/$f\" ])"
+    ]
+  }
+}

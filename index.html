@@ -8,7 +8,7 @@
       content="Tu Vo is a research scientist in Seoul working on computer vision, deep learning, and image restoration."
     >
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#c99718" id="theme-color-meta">
+    <meta name="theme-color" content="#3b5b8c" id="theme-color-meta">
     <title>Tu Vo | Research Scientist</title>
     <script>
       (function () {
@@ -32,78 +32,48 @@
       })();
     </script>
     <style>
+      /* Critical CSS — kept minimal to avoid a flash before stylesheet.css loads. */
       :root {
         color-scheme: light;
-        --bg: #f6f2eb;
-        --bg-start: #fefcf8;
-        --bg-end: #f7f3ec;
-        --bg-top-left: rgba(239, 211, 111, 0.26);
-        --bg-top-right: rgba(164, 173, 186, 0.18);
-        --surface: rgba(255, 255, 255, 0.9);
-        --surface-soft: rgba(255, 255, 255, 0.78);
-        --text: #20252d;
-        --muted: #616978;
-        --accent: #c99718;
-        --accent-strong: #8b6500;
-        --accent-soft: rgba(201, 151, 24, 0.14);
-        --border: rgba(31, 37, 48, 0.12);
-        --border-soft: rgba(31, 37, 48, 0.08);
-        --shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
-        --radius-xl: 30px;
-        --radius-lg: 22px;
-        --radius-sm: 999px;
-        --container: 1120px;
-        --button-primary-start: #efd36f;
-        --button-primary-end: #c99718;
-        --button-primary-text: #2d2410;
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface-soft: #fafafa;
+        --text: #1d1d1f;
+        --muted: #6b7280;
+        --accent: #3b5b8c;
+        --accent-strong: #2c4670;
+        --border: rgba(26, 26, 26, 0.12);
+        --border-soft: rgba(26, 26, 26, 0.07);
+        --topbar-bg: rgba(255, 255, 255, 0.88);
+        --radius: 8px;
+        --container: 720px;
       }
 
       :root[data-theme="dark"] {
         color-scheme: dark;
-        --bg: #13161b;
-        --bg-start: #171b22;
-        --bg-end: #101318;
-        --bg-top-left: rgba(239, 211, 111, 0.16);
-        --bg-top-right: rgba(164, 173, 186, 0.14);
-        --surface: rgba(27, 31, 38, 0.94);
-        --surface-soft: rgba(27, 31, 38, 0.88);
-        --text: #eef1f5;
-        --muted: #a7afbb;
-        --accent: #f0d36f;
-        --accent-strong: #ffe7a6;
-        --accent-soft: rgba(240, 211, 111, 0.14);
+        --bg: #14171c;
+        --surface: #1b1f26;
+        --surface-soft: #181c22;
+        --text: #e9ecf1;
+        --muted: #9aa3b2;
+        --accent: #8fb0e0;
+        --accent-strong: #b9d0f2;
         --border: rgba(255, 255, 255, 0.12);
-        --border-soft: rgba(255, 255, 255, 0.08);
-        --shadow: 0 28px 80px rgba(0, 0, 0, 0.32);
-        --button-primary-start: #f0d36f;
-        --button-primary-end: #c99718;
-        --button-primary-text: #1f180a;
+        --border-soft: rgba(255, 255, 255, 0.07);
+        --topbar-bg: rgba(20, 23, 28, 0.88);
       }
 
-      *,
-      *::before,
-      *::after {
+      * {
         box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
       }
 
       body {
         margin: 0;
-        min-height: 100vh;
-        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+        font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.7;
         color: var(--text);
-        background: #ffffff;
-        line-height: 1.65;
-      }
-
-      :root[data-theme="dark"] body {
-        background:
-          radial-gradient(circle at top left, var(--bg-top-left), transparent 30%),
-          radial-gradient(circle at top right, var(--bg-top-right), transparent 28%),
-          linear-gradient(180deg, var(--bg-start) 0%, var(--bg) 38%, var(--bg-end) 100%);
+        background: var(--bg);
       }
 
       a {
@@ -111,588 +81,42 @@
         text-decoration: none;
       }
 
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin: 0;
-      }
-
-      h1,
-      h2,
-      h3 {
-        color: var(--text);
-        font-family: "Source Serif 4", Georgia, serif;
-        letter-spacing: -0.03em;
-      }
-
       .container {
-        width: min(calc(100% - 2rem), var(--container));
+        width: min(calc(100% - 2.5rem), var(--container));
         margin: 0 auto;
-      }
-
-      .section {
-        padding: 4.75rem 0;
-        scroll-margin-top: 6rem;
-      }
-
-      .section-tight {
-        padding-top: 0;
       }
 
       .site-header {
         position: sticky;
         top: 0;
         z-index: 20;
-        padding: 1rem 0 0;
-        backdrop-filter: blur(16px);
-      }
-
-      .topbar {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 0.95rem 1.15rem;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        background: rgba(255, 255, 255, 0.74);
-        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
-      }
-
-      :root[data-theme="dark"] .topbar {
-        background: rgba(18, 21, 26, 0.8);
-      }
-
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.8rem;
-        height: 2.8rem;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--button-primary-start) 0%, var(--button-primary-end) 100%);
-        color: var(--button-primary-text);
-        font-size: 0.92rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        overflow: hidden;
-      }
-
-      .brand:hover,
-      .brand:focus-visible {
-        color: var(--button-primary-text);
-      }
-
-      .topbar-controls,
-      .section-nav,
-      .link-cluster,
-      .social-row,
-      .topic-list,
-      .paper-links,
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-
-      .topbar-controls {
-        flex: 1;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 0.7rem;
-      }
-
-      .section-nav {
-        gap: 0.35rem;
-      }
-
-      .section-nav a {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2.6rem;
-        padding: 0 0.9rem;
-        border-radius: var(--radius-sm);
-        color: var(--muted);
-      }
-
-      .theme-toggle {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        min-height: 2.6rem;
-        padding: 0 0.95rem;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        background: var(--surface);
-        color: var(--text);
-        font: inherit;
-        font-size: 0.94rem;
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .theme-toggle-swatch {
-        width: 0.95rem;
-        height: 0.95rem;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--button-primary-start) 0%, #9099a8 100%);
-      }
-
-      .hero {
-        padding-top: 3rem;
-      }
-
-      .hero-grid,
-      .summary-grid,
-      .service-grid {
-        display: grid;
-        gap: 1.25rem;
-      }
-
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.85fr);
-        gap: 2rem;
-        align-items: start;
-      }
-
-      .eyebrow,
-      .section-kicker,
-      .card-label {
-        margin-bottom: 0.95rem;
-        color: var(--accent);
-        font-size: 0.85rem;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-      }
-
-      .hero h1 {
-        font-size: clamp(3.2rem, 6vw, 5.4rem);
-        line-height: 0.96;
-      }
-
-      .hero-subtitle {
-        margin-top: 1.2rem;
-        font-size: 1.22rem;
-      }
-
-      .hero-description {
-        max-width: 64ch;
-        margin-top: 1rem;
-        color: var(--muted);
-        font-size: 1.02rem;
-      }
-
-      .link-cluster {
-        margin-top: 1.8rem;
-      }
-
-      .social-row {
-        margin-top: 1rem;
-      }
-
-      .social-row a,
-      .footer-links a {
-        color: var(--muted);
-        font-weight: 500;
-      }
-
-      .topic-list {
-        margin: 1.75rem 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .topic-list li,
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        min-height: 2.2rem;
-        padding: 0 0.95rem;
-        border: 1px solid rgba(201, 151, 24, 0.24);
-        border-radius: var(--radius-sm);
-        background: var(--surface);
-        color: var(--accent-strong);
-        font-size: 0.92rem;
-        font-weight: 500;
-      }
-
-      .button,
-      .paper-links a,
-      .visitor-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 2.9rem;
-        padding: 0 1.1rem;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        background: var(--surface);
-        color: var(--text);
-        font-weight: 600;
-      }
-
-      .button-primary {
-        border-color: transparent;
-        background: linear-gradient(135deg, var(--button-primary-start) 0%, var(--button-primary-end) 100%);
-        color: var(--button-primary-text);
-      }
-
-      .button-primary:hover,
-      .button-primary:focus-visible {
-        color: var(--button-primary-text);
-      }
-
-      .profile-card,
-      .mini-card,
-      .section-card {
-        border: 1px solid var(--border);
-        border-radius: var(--radius-xl);
-        background: var(--surface);
-        box-shadow: var(--shadow);
-      }
-
-      .profile-card {
-        overflow: hidden;
-        display: grid;
-        grid-template-rows: minmax(0, 1fr) auto;
-        width: 100%;
-        align-self: start;
-      }
-
-      .profile-image-frame {
-        padding: 1.15rem 1.15rem 0;
-        min-height: 0;
+        background: var(--topbar-bg);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-soft);
       }
 
       .profile-photo {
-        width: 100%;
-        height: 100%;
-        min-height: 0;
-        border-radius: 20px;
+        float: right;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
         object-fit: cover;
-        object-position: center top;
-      }
-
-      .profile-card-body {
-        display: grid;
-        gap: 1rem;
-        padding: 1.35rem 1.4rem 1.5rem;
-      }
-
-      .profile-label {
-        color: var(--muted);
-        font-size: 0.82rem;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .summary-grid,
-      .service-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .mini-card {
-        padding: 1.6rem;
-      }
-
-      .mini-card h2,
-      .paper-card h3 {
-        font-size: 1.45rem;
-        line-height: 1.12;
-      }
-
-      .mini-card p:last-child,
-      .section-copy,
-      .paper-authors,
-      .paper-summary,
-      .news-item p:last-child {
-        color: var(--muted);
-      }
-
-      .section-heading {
-        display: grid;
-        gap: 0.6rem;
-        max-width: 52rem;
-        margin-bottom: 1.6rem;
-      }
-
-      .section-card {
-        padding: 1.8rem;
-      }
-
-      .timeline,
-      .paper-list,
-      .research-shell {
-        display: grid;
-        gap: 1rem;
-      }
-
-      .chip-row,
-      .paper-topline {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.6rem;
-      }
-
-      .news-item,
-      .paper-card {
-        display: grid;
-        gap: 1rem;
-        padding: 1.15rem 1.2rem;
-        border: 1px solid var(--border-soft);
-        border-radius: var(--radius-lg);
-        background: var(--surface-soft);
-      }
-
-      .news-item {
-        grid-template-columns: 150px minmax(0, 1fr);
-      }
-
-      .paper-card {
-        grid-template-columns: minmax(190px, 220px) minmax(0, 1fr);
-        padding: 1rem;
-      }
-
-      .news-item-featured {
-        border-color: rgba(201, 151, 24, 0.24);
-        background: linear-gradient(135deg, var(--accent-soft) 0%, var(--surface-soft) 38%);
-      }
-
-      .paper-media {
-        overflow: hidden;
-        border-radius: 16px;
-        background: linear-gradient(180deg, var(--accent-soft) 0%, rgba(0, 0, 0, 0) 100%);
-      }
-
-      .paper-media img {
-        width: 100%;
-        height: 100%;
-        min-height: 180px;
-        object-fit: cover;
-      }
-
-      .paper-body {
-        display: grid;
-        gap: 0.72rem;
-      }
-
-      .venue-badge,
-      .featured-badge {
-        display: inline-flex;
-        align-items: center;
-        min-height: 1.95rem;
-        padding: 0 0.8rem;
-        border-radius: var(--radius-sm);
-        font-size: 0.82rem;
-        font-weight: 700;
-      }
-
-      .venue-badge {
-        background: var(--accent-soft);
-        color: var(--accent-strong);
-      }
-
-      .featured-badge {
-        background: rgba(144, 153, 168, 0.16);
-        color: #6d7686;
-      }
-
-      .site-footer {
-        padding: 0 0 2.5rem;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        padding: 1.35rem 0 0;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
-      }
-
-      .visitor-tracker {
-        position: absolute;
-        left: -9999px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      @media (max-width: 1024px) {
-        .hero-grid,
-        .summary-grid,
-        .service-grid,
-        .paper-card {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-grid {
-          gap: 1.5rem;
-        }
-
-        .profile-card {
-          width: 100%;
-          justify-self: start;
-          max-width: 32rem;
-          height: auto;
-        }
-      }
-
-      @media (max-width: 760px) {
-        .topbar {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          border-radius: 1.4rem;
-          align-items: center;
-          gap: 0.85rem;
-        }
-
-        .topbar-controls,
-        .footer-content {
-          width: 100%;
-        }
-
-        .topbar-controls {
-          display: contents;
-        }
-
-        .section-nav {
-          grid-column: 1 / -1;
-          grid-row: 2;
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          padding-bottom: 0.15rem;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-
-        .section-nav::-webkit-scrollbar {
-          display: none;
-        }
-
-        .section-nav a {
-          min-height: 2.35rem;
-          padding: 0 0.8rem;
-          white-space: nowrap;
-          border: 1px solid var(--border);
-          background: var(--surface);
-        }
-
-        .theme-toggle {
-          grid-column: 2;
-          grid-row: 1;
-          justify-self: end;
-          width: auto;
-          min-height: 2.35rem;
-          padding: 0 0.85rem;
-        }
-
-        .footer-content {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .hero {
-          padding-top: 1.8rem;
-        }
-
-        .section {
-          padding: 3.2rem 0;
-        }
-
-        .eyebrow {
-          font-size: 0.77rem;
-          letter-spacing: 0.12em;
-        }
-
-        .hero-subtitle {
-          font-size: 1.08rem;
-        }
-
-        .hero-description {
-          font-size: 0.98rem;
-        }
-
-        .brand {
-          font-size: 0;
-          background:
-            url("images/image.jpg") center 18% / cover no-repeat;
-          border: 2px solid rgba(255, 255, 255, 0.68);
-          box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
-        }
-
-        .news-item {
-          grid-template-columns: 1fr;
-        }
-
-        .profile-card {
-          display: none;
-        }
-      }
-
-      @media (max-width: 560px) {
-        .container {
-          width: min(calc(100% - 1.2rem), var(--container));
-        }
-
-        .topbar {
-          padding: 0.8rem 0.9rem;
-        }
-
-        .brand {
-          width: 2.45rem;
-          height: 2.45rem;
-        }
-
-        .link-cluster,
-        .button {
-          width: 100%;
-        }
-
-        .theme-toggle {
-          width: auto;
-        }
-
-        .section-nav a {
-          padding: 0 0.75rem;
-          font-size: 0.89rem;
-        }
-
-        .hero h1 {
-          font-size: clamp(2.9rem, 17vw, 3.9rem);
-        }
+        margin: 0.35rem 0 1.25rem 1.75rem;
       }
     </style>
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260422-1">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260604-1">
   </head>
 
   <body>
     <header class="site-header">
-      <div class="container topbar">
-        <a class="brand" href="#about" aria-label="Tu Vo homepage">TV</a>
-        <div class="topbar-controls">
-          <nav class="section-nav" aria-label="Primary navigation">
-            <a href="#about">About</a>
-            <a href="#news">News</a>
-            <a href="#research">Research</a>
-            <a href="#service">Service</a>
-            <a href="data/CV_TuVo.pdf">CV</a>
-          </nav>
+      <div class="container nav">
+        <a class="nav-name" href="#top">Tu Vo</a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="data/CV_TuVo.pdf">CV</a>
           <button
             class="theme-toggle"
             id="theme-toggle"
@@ -701,431 +125,251 @@
             aria-pressed="false"
           >
             <span class="theme-toggle-swatch" aria-hidden="true"></span>
-            <span class="theme-toggle-text" id="theme-toggle-text">Night mode</span>
+            <span id="theme-toggle-text">Dark</span>
           </button>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero section" id="about">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Research Scientist / Computer Vision / Seoul</p>
-            <h1>Tu Vo</h1>
-            <p class="hero-subtitle">
-              Research Scientist at
-              <a href="https://www.kc-ml2.com/en/" rel="noopener noreferrer">KC Machine Learning Lab (ML2)</a>
-            </p>
-            <p class="hero-description">
-              I work on computer vision and deep learning, with a focus on image restoration problems such as
-              deblurring, low-light enhancement, and HDR imaging.
-            </p>
-            <p class="hero-description">
-              I received my M.S. from
-              <a href="http://cilab.dongguk.edu/" rel="noopener noreferrer">CILAB</a>
-              at
-              <a href="https://www.pknu.ac.kr/main" rel="noopener noreferrer">Pukyong National University</a>,
-              and my B.S. in Electrical Engineering from
-              <a href="https://en.hust.edu.vn/" rel="noopener noreferrer">Hanoi University of Science and Technology</a>.
-              I am always open to new opportunities and collaborations.
-            </p>
-
-            <div class="link-cluster">
-              <a class="button button-primary" href="data/CV_TuVo.pdf">Download CV</a>
-              <a class="button" href="mailto:vovantu.hust@gmail.com">Email</a>
-            </div>
-
-            <div class="social-row">
-              <a href="https://scholar.google.com/citations?user=MMz9pyEAAAAJ&amp;hl=en" rel="noopener noreferrer">Google Scholar</a>
-              <a href="https://github.com/tuvovan/" rel="noopener noreferrer">GitHub</a>
-            </div>
-
-            <ul class="topic-list" aria-label="Research topics">
-              <li>Deblurring</li>
-              <li>Low-Light Enhancement</li>
-              <li>HDR Imaging</li>
-              <li>Deep Unrolling</li>
-            </ul>
-          </div>
-
-          <aside class="profile-card">
-            <div class="profile-image-frame">
-              <img
-                class="profile-photo"
-                src="images/image.jpg"
-                alt="Portrait of Tu Vo"
-                width="480"
-                height="640"
-              >
-            </div>
-
-            <div class="profile-card-body">
-              <div class="profile-row">
-                <span class="profile-label">Current role</span>
-                <span>Research Scientist, KC ML2</span>
-              </div>
-              <div class="profile-row">
-                <span class="profile-label">Based in</span>
-                <span>Seoul, South Korea</span>
-              </div>
-              <div class="profile-row">
-                <span class="profile-label">Research areas</span>
-                <span>Computer Vision, Deep Learning, Image Restoration</span>
-              </div>
-            </div>
-          </aside>
+    <main class="container" id="top">
+      <section class="about" id="about">
+        <img
+          class="profile-photo"
+          src="images/image.jpg"
+          alt="Portrait of Tu Vo"
+          width="180"
+          height="180"
+        >
+        <h1 class="name">Tu Vo</h1>
+        <p class="tagline">
+          Research Scientist at
+          <a href="https://www.kc-ml2.com/en/" rel="noopener noreferrer">KC Machine Learning Lab (ML2)</a>
+          · Seoul, South Korea
+        </p>
+        <p class="bio">
+          I work on computer vision and deep learning, with a focus on image restoration problems such as
+          deblurring, low-light enhancement, and HDR imaging.
+        </p>
+        <p class="bio">
+          I received my M.S. from
+          <a href="http://cilab.dongguk.edu/" rel="noopener noreferrer">CILAB</a>
+          at
+          <a href="https://www.pknu.ac.kr/main" rel="noopener noreferrer">Pukyong National University</a>,
+          and my B.S. in Electrical Engineering from
+          <a href="https://en.hust.edu.vn/" rel="noopener noreferrer">Hanoi University of Science and Technology</a>.
+          I am always open to new opportunities and collaborations.
+        </p>
+        <p class="bio">
+          Reach me at
+          <a href="mailto:vovantu.hust@gmail.com">vovantu.hust@gmail.com</a>.
+        </p>
+        <div class="about-links">
+          <a href="data/CV_TuVo.pdf">CV</a>
+          <a href="https://scholar.google.com/citations?user=MMz9pyEAAAAJ&amp;hl=en" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://github.com/tuvovan/" rel="noopener noreferrer">GitHub</a>
+          <a href="mailto:vovantu.hust@gmail.com">Email</a>
         </div>
       </section>
 
-      <section class="section section-tight">
-        <div class="container summary-grid">
-          <article class="mini-card">
-            <p class="card-label">Current focus</p>
-            <h2>Model-based vision systems</h2>
-            <p>
-              Building deep unrolling methods for defocus deblurring, joint low-light enhancement, and
-              physically grounded image restoration.
-            </p>
-          </article>
-
-          <article class="mini-card">
-            <p class="card-label">Recent milestone</p>
-            <h2>NeurIPS COML 2025</h2>
-            <p>
-              My recent work on error-aware deep unrolling for single-image defocus deblurring was accepted
-              to the NeurIPS workshop on Constrained Optimization for Machine Learning.
-            </p>
-          </article>
-
-          <article class="mini-card">
-            <p class="card-label">Open to</p>
-            <h2>Collaboration and new opportunities</h2>
-            <p>
-              I enjoy connecting on research collaborations, applied computer vision projects, and
-              industry-facing work that benefits from rigorous vision models.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="news">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-kicker">Updates</p>
-            <h2>News</h2>
-            <p class="section-copy">Recent milestones, accepted papers, and activities.</p>
+      <section class="block" id="news">
+        <h2>News</h2>
+        <div class="news-box">
+          <div class="news-row">
+            <span class="news-date">Jun 2026</span>
+            <span class="news-text">
+              <a href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">DAS</a>
+              accepted to the ICML Workshop on Machine Learning for Audio.
+            </span>
           </div>
-
-          <div class="section-card timeline">
-            <article class="news-item news-item-featured">
-              <time datetime="2026-06-04">Jun 4, 2026</time>
-              <div>
-                <p class="news-title">DAS accepted to ICML Workshop on Machine Learning for Audio</p>
-                <p>
-                  Our paper
-                  <a href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">
-                    Drift-Augmented Scoring: Text-Derived Noise Robustness for Zero-Shot Audio-Language Classification
-                  </a>
-                  was accepted to the ICML Workshop on Machine Learning for Audio.
-                </p>
-              </div>
-            </article>
-
-            <article class="news-item">
-              <time datetime="2026-04-22">Apr 22, 2026</time>
-              <div>
-                <p class="news-title">Serving on the program committee at ACM MobiSys workshop</p>
-                <p>
-                  I will serve on the program committee for the International Workshop on Embedded and
-                  Mobile Deep Learning (Workshop @ ACM MobiSys).
-                </p>
-              </div>
-            </article>
-
-            <article class="news-item news-item-featured">
-              <time datetime="2025-09-23">Sep 23, 2025</time>
-              <div>
-                <p class="news-title">ErA accepted to NeurIPS COML 2025</p>
-                <p>
-                  Our paper
-                  <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">
-                    ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Debluring
-                  </a>
-                  was accepted, and the
-                  <a href="data/COML_poster_portrait.pdf">poster</a>
-                  is available.
-                </p>
-              </div>
-            </article>
-
-            <article class="news-item">
-              <time datetime="2024-10-29">Oct 29, 2024</time>
-              <div>
-                <p class="news-title">JUDE accepted to WACV 2025</p>
-                <p>
-                  Our paper
-                  <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">
-                    Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)
-                  </a>
-                  was accepted to WACV 2025, with a
-                  <a href="https://jude.kc-ml2.com/" rel="noopener noreferrer">project page</a>.
-                </p>
-              </div>
-            </article>
-
-            <article class="news-item">
-              <time datetime="2023-09-05">Sep 5, 2023</time>
-              <div>
-                <p class="news-title">6th place in the ICCV 2023 Budgeted Model Training Challenge</p>
-                <p>
-                  We ranked 6th in the
-                  <a href="https://sites.google.com/view/rcv2023/" rel="noopener noreferrer">Budgeted Model Training challenge</a>
-                  at ICCV 2023.
-                </p>
-              </div>
-            </article>
-
-            <article class="news-item">
-              <time datetime="2022-02-01">Feb 1, 2022</time>
-              <div>
-                <p class="news-title">Joined KC Machine Learning Lab</p>
-                <p>
-                  I joined
-                  <a href="https://www.kc-ml2.com/en" rel="noopener noreferrer">KC Machine Learning Lab</a>
-                  as a Research Scientist working on computer vision.
-                </p>
-              </div>
-            </article>
-
-            <article class="news-item">
-              <time datetime="2021-04-16">Apr 16, 2021</time>
-              <div>
-                <p class="news-title">Attention! Stay Focus! published at CVPRW 2021</p>
-                <p>
-                  My paper
-                  <a href="https://github.com/tuvovan/ATTSF" rel="noopener noreferrer">Attention! Stay Focus!</a>
-                  appeared in the CVPR Workshops.
-                </p>
-              </div>
-            </article>
+          <div class="news-row">
+            <span class="news-date">Apr 2026</span>
+            <span class="news-text">
+              Serving on the program committee for the International Workshop on Embedded and Mobile Deep
+              Learning (@ ACM MobiSys).
+            </span>
+          </div>
+          <div class="news-row">
+            <span class="news-date">Sep 2025</span>
+            <span class="news-text">
+              <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">ErA</a>
+              accepted to NeurIPS COML 2025
+              (<a href="data/COML_poster_portrait.pdf">poster</a>).
+            </span>
+          </div>
+          <div class="news-row">
+            <span class="news-date">Oct 2024</span>
+            <span class="news-text">
+              <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">JUDE</a>
+              accepted to WACV 2025
+              (<a href="https://jude.kc-ml2.com/" rel="noopener noreferrer">project page</a>).
+            </span>
+          </div>
+          <div class="news-row">
+            <span class="news-date">Sep 2023</span>
+            <span class="news-text">
+              Ranked 6th in the
+              <a href="https://sites.google.com/view/rcv2023/" rel="noopener noreferrer">Budgeted Model Training challenge</a>
+              at ICCV 2023.
+            </span>
+          </div>
+          <div class="news-row">
+            <span class="news-date">Feb 2022</span>
+            <span class="news-text">
+              Joined
+              <a href="https://www.kc-ml2.com/en" rel="noopener noreferrer">KC Machine Learning Lab</a>
+              as a Research Scientist.
+            </span>
+          </div>
+          <div class="news-row">
+            <span class="news-date">Apr 2021</span>
+            <span class="news-text">
+              <a href="https://github.com/tuvovan/ATTSF" rel="noopener noreferrer">Attention! Stay Focus!</a>
+              published at CVPRW 2021.
+            </span>
           </div>
         </div>
       </section>
 
-      <section class="section" id="research">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-kicker">Selected work</p>
-            <h2>Research</h2>
-            <p class="section-copy">
-              I am interested in computer vision and deep learning, especially low-level vision problems that
-              require strong physical priors and robust restoration strategies.
-            </p>
-          </div>
-
-          <div class="section-card research-shell">
-            <div class="chip-row" aria-label="Research themes">
-              <span class="chip">Image Restoration</span>
-              <span class="chip">Defocus Deblurring</span>
-              <span class="chip">Low-Light Enhancement</span>
-              <span class="chip">HDR Imaging</span>
-            </div>
-
-            <div class="paper-list">
-              <article class="paper-card paper-card-featured">
-                <div class="paper-media">
-                  <img src="images/das.png" alt="Preview image for DAS" loading="lazy">
-                </div>
-                <div class="paper-body">
-                  <div class="paper-topline">
-                    <span class="venue-badge">ICML MLA Workshop 2026</span>
-                    <span class="featured-badge">New</span>
-                  </div>
-                  <h3>
-                    <a href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">
-                      Drift-Augmented Scoring: Text-Derived Noise Robustness for Zero-Shot Audio-Language Classification
-                    </a>
-                  </h3>
-                  <p class="paper-authors"><strong>Tu Vo</strong> et al.</p>
-                  <p class="paper-summary">
-                    A zero-shot audio-language classification method that improves robustness to acoustic noise
-                    by augmenting CLAP-based scoring with text-derived drift estimates, without requiring any
-                    labeled audio data.
-                  </p>
-                  <div class="paper-links">
-                    <a href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">Paper</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="paper-card paper-card-featured">
-                <div class="paper-media">
-                  <img src="images/edu.gif" alt="Preview image for ErA" loading="lazy">
-                </div>
-                <div class="paper-body">
-                  <div class="paper-topline">
-                    <span class="venue-badge">NeurIPS COML 2025</span>
-                    <span class="featured-badge">Featured</span>
-                  </div>
-                  <h3>
-                    <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">
-                      ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Debluring
-                    </a>
-                  </h3>
-                  <p class="paper-authors"><strong>Tu Vo</strong>, Chan Y. Park</p>
-                  <p class="paper-summary">
-                    An error-aware deep unrolling framework for single-image defocus deblurring with strong
-                    quantitative results across standard benchmarks.
-                  </p>
-                  <div class="paper-links">
-                    <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">Paper</a>
-                    <a href="data/COML_poster_portrait.pdf">Poster</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="paper-card paper-card-featured">
-                <div class="paper-media">
-                  <img src="images/jude.gif" alt="Preview image for JUDE" loading="lazy">
-                </div>
-                <div class="paper-body">
-                  <div class="paper-topline">
-                    <span class="venue-badge">WACV 2025</span>
-                    <span class="featured-badge">Featured</span>
-                  </div>
-                  <h3>
-                    <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">
-                      Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)
-                    </a>
-                  </h3>
-                  <p class="paper-authors"><strong>Tu Vo</strong>, Chan Y. Park</p>
-                  <p class="paper-summary">
-                    A physically inspired joint restoration pipeline that tackles nighttime blur and low-light
-                    degradation in a single unrolled framework.
-                  </p>
-                  <div class="paper-links">
-                    <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">Paper</a>
-                    <a href="https://jude.kc-ml2.com/" rel="noopener noreferrer">Project Page</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="paper-card">
-                <div class="paper-media">
-                  <img src="images/rcv.png" alt="Preview image for the RCV challenge paper" loading="lazy">
-                </div>
-                <div class="paper-body">
-                  <div class="paper-topline">
-                    <span class="venue-badge">ICCVW 2023</span>
-                  </div>
-                  <h3>
-                    <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">
-                      Benchmarking Model Training and Inference for Resource-Constrained Deep Learning
-                    </a>
-                  </h3>
-                  <p class="paper-authors">Rishabh Tiwari, Arnav Chavan, ... <strong>Tu Vo</strong>, and collaborators</p>
-                  <p class="paper-summary">
-                    A challenge report on methods for training and inference under strict memory and time
-                    constraints, built around the ICCV 2023 RCV workshop tracks.
-                  </p>
-                  <div class="paper-links">
-                    <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">Paper</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="paper-card">
-                <div class="paper-media">
-                  <img src="images/attsf.gif" alt="Preview image for Attention! Stay Focus!" loading="lazy">
-                </div>
-                <div class="paper-body">
-                  <div class="paper-topline">
-                    <span class="venue-badge">CVPRW 2021</span>
-                  </div>
-                  <h3>
-                    <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">
-                      Attention! Stay Focus!
-                    </a>
-                  </h3>
-                  <p class="paper-authors"><strong>Tu Vo</strong></p>
-                  <p class="paper-summary">
-                    A model for generating all-in-focus imagery from dual-view inputs.
-                  </p>
-                  <div class="paper-links">
-                    <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">Paper</a>
-                    <a href="https://github.com/tuvovan/ATTSF/" rel="noopener noreferrer">Code</a>
-                  </div>
-                </div>
-              </article>
-
-              <article class="paper-card">
-                <div class="paper-media">
-                  <img src="images/access2020.jpeg" alt="Preview image for HDR video synthesis work" loading="lazy">
-                </div>
-                <div class="paper-body">
-                  <div class="paper-topline">
-                    <span class="venue-badge">IEEE Access 2020</span>
-                  </div>
-                  <h3>
-                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">
-                      High Dynamic Range Video Synthesis Using Superpixel-Based Illuminance-Invariant Motion Estimation
-                    </a>
-                  </h3>
-                  <p class="paper-authors"><strong>Tu Vo</strong>, Chul Lee</p>
-                  <p class="paper-summary">
-                    A method for synthesizing HDR video from alternating low dynamic range sequences using
-                    illumination-invariant motion estimation.
-                  </p>
-                  <div class="paper-links">
-                    <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">Paper</a>
-                  </div>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="service">
-        <div class="container">
-          <div class="section-heading">
-            <p class="section-kicker">Community</p>
-            <h2>Service &amp; Activities</h2>
-            <p class="section-copy">A few ways I contribute beyond my published work.</p>
-          </div>
-
-          <div class="service-grid">
-            <article class="mini-card">
-              <p class="card-label">Conference service</p>
-              <h2>Reviewer</h2>
-              <p>WACV 2025, ICLR 2025, and ECCV 2026.</p>
-            </article>
-
-            <article class="mini-card">
-              <p class="card-label">Workshop service</p>
-              <h2>Program Committee</h2>
-              <p>
-                International Workshop on Embedded and Mobile Deep Learning (Workshop @ ACM MobiSys).
+      <section class="block" id="publications">
+        <h2>Publications</h2>
+        <ol class="pub-list">
+          <li class="pub">
+            <a class="pub-thumb" href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">
+              <img src="images/das.png" alt="Preview for DAS" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <span class="pub-venue">ICML MLA Workshop 2026</span>
+              <p class="pub-title">
+                <a href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">
+                  Drift-Augmented Scoring: Text-Derived Noise Robustness for Zero-Shot Audio-Language Classification
+                </a>
               </p>
-            </article>
-
-            <article class="mini-card">
-              <p class="card-label">Collaboration</p>
-              <h2>Let's connect</h2>
-              <p>
-                If you are interested in my work, I am happy to talk about collaboration opportunities,
-                applied research, or future projects.
+              <p class="pub-authors"><strong>Tu Vo</strong> et al.</p>
+              <p class="pub-meta">ICML Workshop on Machine Learning for Audio, 2026</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/abs/2606.04844" rel="noopener noreferrer">Paper</a>
               </p>
-            </article>
+            </div>
+          </li>
+
+          <li class="pub">
+            <a class="pub-thumb" href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">
+              <img src="images/edu.gif" alt="Preview for ErA" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <span class="pub-venue">NeurIPS COML 2025</span>
+              <p class="pub-title">
+                <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">
+                  ErA: Error-Aware Deep Unrolling Network for Single Image Defocus Deblurring
+                </a>
+              </p>
+              <p class="pub-authors"><strong>Tu Vo</strong>, Chan Y. Park</p>
+              <p class="pub-meta">NeurIPS Workshop on Constrained Optimization for Machine Learning, 2025</p>
+              <p class="pub-links">
+                <a href="https://openreview.net/forum?id=w8fFSm4RR9&amp;referrer=%5Bthe%20profile%20of%20Tu%20Vo%5D(%2Fprofile%3Fid%3D~Tu_Vo1)" rel="noopener noreferrer">Paper</a>
+                <a href="data/COML_poster_portrait.pdf">Poster</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub">
+            <a class="pub-thumb" href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">
+              <img src="images/jude.gif" alt="Preview for JUDE" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <span class="pub-venue">WACV 2025</span>
+              <p class="pub-title">
+                <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">
+                  Deep Joint Unrolling for Deblurring and Low-Light Image Enhancement (JUDE)
+                </a>
+              </p>
+              <p class="pub-authors"><strong>Tu Vo</strong>, Chan Y. Park</p>
+              <p class="pub-meta">IEEE/CVF Winter Conference on Applications of Computer Vision, 2025</p>
+              <p class="pub-links">
+                <a href="https://arxiv.org/pdf/2412.07527" rel="noopener noreferrer">Paper</a>
+                <a href="https://jude.kc-ml2.com/" rel="noopener noreferrer">Project Page</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub">
+            <a class="pub-thumb" href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">
+              <img src="images/rcv.png" alt="Preview for the RCV challenge paper" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <span class="pub-venue">ICCVW 2023</span>
+              <p class="pub-title">
+                <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">
+                  Benchmarking Model Training and Inference for Resource-Constrained Deep Learning
+                </a>
+              </p>
+              <p class="pub-authors">Rishabh Tiwari, Arnav Chavan, &hellip; <strong>Tu Vo</strong>, and collaborators</p>
+              <p class="pub-meta">ICCV Workshop on Resource-Constrained Vision, 2023</p>
+              <p class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/ICCV2023W/RCV/papers/Tiwari_RCV2023_Challenges_Benchmarking_Model_Training_and_Inference_for_Resource-Constrained_Deep_ICCVW_2023_paper.pdf" rel="noopener noreferrer">Paper</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub">
+            <a class="pub-thumb" href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">
+              <img src="images/attsf.gif" alt="Preview for Attention! Stay Focus!" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <span class="pub-venue">CVPRW 2021</span>
+              <p class="pub-title">
+                <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">
+                  Attention! Stay Focus!
+                </a>
+              </p>
+              <p class="pub-authors"><strong>Tu Vo</strong></p>
+              <p class="pub-meta">CVPR Workshops (NTIRE), 2021</p>
+              <p class="pub-links">
+                <a href="https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/papers/Vo_Attention_Stay_Focus_CVPRW_2021_paper.pdf" rel="noopener noreferrer">Paper</a>
+                <a href="https://github.com/tuvovan/ATTSF/" rel="noopener noreferrer">Code</a>
+              </p>
+            </div>
+          </li>
+
+          <li class="pub">
+            <a class="pub-thumb" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">
+              <img src="images/access2020.jpeg" alt="Preview for HDR video synthesis work" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <span class="pub-venue">IEEE Access 2020</span>
+              <p class="pub-title">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">
+                  High Dynamic Range Video Synthesis Using Superpixel-Based Illuminance-Invariant Motion Estimation
+                </a>
+              </p>
+              <p class="pub-authors"><strong>Tu Vo</strong>, Chul Lee</p>
+              <p class="pub-meta">IEEE Access, 2020</p>
+              <p class="pub-links">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=8977532" rel="noopener noreferrer">Paper</a>
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="block" id="service">
+        <h2>Service</h2>
+        <dl class="service-list">
+          <div class="service-row">
+            <dt>Reviewer</dt>
+            <dd>WACV 2025, ICLR 2025, ECCV 2026</dd>
           </div>
-        </div>
+          <div class="service-row">
+            <dt>Program Committee</dt>
+            <dd>International Workshop on Embedded and Mobile Deep Learning (@ ACM MobiSys)</dd>
+          </div>
+        </dl>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-content">
-        <p>Tu Vo / Computer Vision and Image Restoration</p>
+        <p>Tu Vo · Computer Vision &amp; Image Restoration</p>
         <div class="footer-links">
           <a href="mailto:vovantu.hust@gmail.com">Email</a>
           <a href="https://scholar.google.com/citations?user=MMz9pyEAAAAJ&amp;hl=en" rel="noopener noreferrer">Scholar</a>
@@ -1136,7 +380,7 @@
             rel="noopener noreferrer"
             aria-label="Visitor count for this website"
           >
-            Visitor stats
+            Visitors
           </a>
         </div>
       </div>
@@ -1156,12 +400,9 @@
         var themeToggle = document.getElementById("theme-toggle");
         var themeToggleText = document.getElementById("theme-toggle-text");
         var themeColorMeta = document.getElementById("theme-color-meta");
-        var heroCopy = document.querySelector(".hero-copy");
-        var profileCard = document.querySelector(".profile-card");
-        var heroSyncFrame = 0;
         var themeColors = {
-          light: "#c99718",
-          dark: "#171a20"
+          light: "#3b5b8c",
+          dark: "#14171c"
         };
 
         function applyTheme(theme, persist) {
@@ -1172,7 +413,7 @@
           }
 
           if (themeToggleText) {
-            themeToggleText.textContent = theme === "dark" ? "Day mode" : "Night mode";
+            themeToggleText.textContent = theme === "dark" ? "Light" : "Dark";
           }
 
           if (themeColorMeta) {
@@ -1188,45 +429,8 @@
           }
         }
 
-        function syncHeroProfileHeight() {
-          if (!heroCopy || !profileCard) {
-            return;
-          }
-
-          profileCard.style.height = "";
-
-          if (window.matchMedia("(max-width: 1024px)").matches) {
-            return;
-          }
-
-          var copyHeight = Math.ceil(heroCopy.getBoundingClientRect().height);
-
-          if (copyHeight > 0) {
-            profileCard.style.height = copyHeight + "px";
-          }
-        }
-
-        function requestHeroProfileSync() {
-          if (heroSyncFrame) {
-            cancelAnimationFrame(heroSyncFrame);
-          }
-
-          heroSyncFrame = requestAnimationFrame(function () {
-            heroSyncFrame = 0;
-            syncHeroProfileHeight();
-          });
-        }
-
         var initialTheme = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
         applyTheme(initialTheme, false);
-
-        requestHeroProfileSync();
-        window.addEventListener("load", requestHeroProfileSync);
-        window.addEventListener("resize", requestHeroProfileSync);
-
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(requestHeroProfileSync).catch(function () {});
-        }
 
         if (themeToggle) {
           themeToggle.addEventListener("click", function () {
