@@ -123,6 +123,12 @@ p {
   letter-spacing: 0.01em;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -195,6 +201,10 @@ p {
   margin-top: 0.35rem;
   color: var(--muted);
   font-size: 1.05rem;
+}
+
+.tagline-location {
+  margin-top: 0.1rem;
 }
 
 .bio {
@@ -447,9 +457,15 @@ p {
 
   .profile-photo {
     float: none;
-    margin: 0 0 1.25rem;
-    width: 150px;
-    height: 150px;
+    display: block;
+    margin: 0 auto 1.25rem;
+    width: 140px;
+    height: 140px;
+  }
+
+  .name,
+  .tagline {
+    text-align: center;
   }
 
   .name {
@@ -472,10 +488,30 @@ p {
   }
 
   .nav {
-    gap: 0.6rem 0.9rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    row-gap: 0.55rem;
+  }
+
+  .nav-name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .nav-right {
+    display: contents;
+  }
+
+  .theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
   }
 
   .nav-links {
-    gap: 0.9rem;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: 0.55rem 1rem;
   }
 }

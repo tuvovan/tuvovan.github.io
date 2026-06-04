@@ -112,11 +112,13 @@
     <header class="site-header">
       <div class="container nav">
         <a class="nav-name" href="#top">Tu Vo</a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#news">News</a>
-          <a href="#publications">Publications</a>
-          <a href="data/CV_TuVo.pdf">CV</a>
+        <div class="nav-right">
+          <nav class="nav-links" aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#publications">Publications</a>
+            <a href="data/CV_TuVo.pdf">CV</a>
+          </nav>
           <button
             class="theme-toggle"
             id="theme-toggle"
@@ -127,7 +129,7 @@
             <span class="theme-toggle-swatch" aria-hidden="true"></span>
             <span id="theme-toggle-text">Dark</span>
           </button>
-        </nav>
+        </div>
       </div>
     </header>
 
@@ -144,8 +146,8 @@
         <p class="tagline">
           Research Scientist at
           <a href="https://www.kc-ml2.com/en/" rel="noopener noreferrer">KC Machine Learning Lab (ML2)</a>
-          · Seoul, South Korea
         </p>
+        <p class="tagline tagline-location">Seoul, South Korea</p>
         <p class="bio">
           I work on computer vision and deep learning, with a focus on image restoration problems such as
           deblurring, low-light enhancement, and HDR imaging.
