@@ -297,6 +297,10 @@ p {
   border-bottom: 1px solid var(--border-soft);
 }
 
+.pub-no-thumb {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .pub:last-child {
   border-bottom: none;
 }
