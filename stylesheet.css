@@ -319,6 +319,12 @@ p {
   object-fit: cover;
 }
 
+.pub-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .pub-body {
   min-width: 0;
 }
